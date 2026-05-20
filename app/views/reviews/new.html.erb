@@ -5,6 +5,8 @@
 
     <h1 class="mb-4">NEW REVIEW</h1>
 
+    <div class=" mx-auto w-75">
+
     <%= simple_form_for [@restaurant, @review] do |f| %>
 
       <%= f.input :content %>
@@ -16,9 +18,11 @@
           } %>
 
       <%= f.submit "Créer la review",
-          class: "btn btn-primary" %>
+          class: "btn btn-secondary" %>
 
     <% end %>
+
+    </div>
 
   </div>
 </div>

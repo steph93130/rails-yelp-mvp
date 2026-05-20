@@ -6,6 +6,8 @@
     <h1 class="mb-4">NEW</h1>
     <h1 class="mb-4">Nouveau Restaurant</h1>
 
+   <div class=" mx-auto w-50">
+
   <%= simple_form_for @restaurant do |f| %>
 
     <%= f.input :name %>
@@ -18,10 +20,11 @@
         collection: Restaurant::CATEGORIES %>
 
     <%= f.submit "Créer le restaurant",
-        class: "btn btn-primary" %>
+        class: "btn btn-secondary" %>
 
   <% end %>
 
+   </div>
     </div>
   </div>
 </div>
