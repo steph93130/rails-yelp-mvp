@@ -1,0 +1,50 @@
+<%= render "shared/nav" %>
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="w-50 text-center">
+
+    <h1 class="mb-4">LES RESTAURANTS</h1>
+    <h5 class="mb-4">Vos préférés</h5>
+
+    <div class="visu">
+      <% @restaurants.each do |restaurant| %>
+
+        <div class="card mb-3 mx-auto w-75">
+          <div class="card-body d-flex justify-content-between align-items-center">
+
+            <div>
+
+
+              <%= link_to restaurant.name,
+                  restaurant_path(restaurant),
+                  class: "text-decoration-none fw-bold text-primary" %>
+            </div>
+
+            <div class="d-flex gap-2">
+              <%= link_to "+AVIS",
+                  new_restaurant_review_path(restaurant),
+                  class: "btn btn-secondary btn-sm" %>
+
+              <%# <%=
+                button_to "Delete",
+                restaurant_path(restaurant),
+                method: :delete,
+                data: { turbo_confirm: "Are you sure?" },
+                class: "btn btn-danger btn-sm"
+              %>
+            </div>
+
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+    <div class="mb-4">
+      <%= link_to "Nouveau Restaurant",
+          new_restaurant_path,
+          class: "btn btn-primary" %>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<%= render "shared/nav" %>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="w-50 text-center">
+
+    <h1 class="mb-4">SHOW</h1>
+    <h5 class="mb-4">Votre restaurant</h5>
+
+    <div class="visu">
+
+      <div class="card mb-3 mx-auto w-75">
+        <div class="card-body shadow-lg">
+
+          <h1 class="text-primary"><%= @restaurant.name %></h1>
+
+          <p><%= @restaurant.address %></p>
+          <% @restaurant.reviews.each do |review| %>
+          <p class="text-danger fontx"><%= review.rating %></p>
+          <p class="bg-dark rounded p-5 text-white"><%= review.content %></p>
+           <% end %>
+          <p>
+                   </p>
+
+        <div class="d-flex justify-content-center gap-3 mt-4">
+
+  <%= link_to "Index",
+      restaurants_path,
+      class: "btn btn-success" %>
+
+
+  <%# <%= button_to "Delete",
+      restaurant_path(@restaurant),
+      method: :delete,
+      data: {
+        turbo_confirm: "Are you sure?"
+      },
+      class: "btn btn-danger" %>
+
+</div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
